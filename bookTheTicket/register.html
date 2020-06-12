@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title> Register</title>
+
+    <style>
+        body {
+            background-color: crimson;
+            opacity: 100%;
+        }
+
+        h2 {
+            color: crimson;
+            text-align: center;
+            margin-top: 25px;
+            font-family: Tahoma;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px black;
+        }
+
+        .div1 {
+            margin-top: 50px;
+            background-color: white;
+            height: 580px;
+            box-shadow: 5px 5px 0px 0px crimson;
+        }
+
+        table {
+            margin-left: 55Px;
+            margin-top: 20px;
+        }
+
+        [type="text"] {
+            width: 300px;
+            height: 30px;
+
+        }
+
+        label {
+
+            font-size: 16px;
+            color: black;
+            font-family: Tahoma;
+            text-align: left;
+
+
+
+        }
+
+        [type="password"] {
+
+            width: 300px;
+            height: 30px;
+
+
+
+
+        }
+
+        [type="number"] {
+
+            width: 300px;
+            height: 30px;
+
+
+
+
+        }
+
+        [type="email"] {
+
+            width: 300px;
+            height: 30px;
+
+        }
+
+        [type="Submit"] {
+            margin-top: 10px;
+            width: 300px;
+            height: 40px;
+            color: white;
+            background-color: crimson;
+            border-color: grey;
+            font-weight: bold;
+
+
+
+        }
+
+        Button {
+            margin-top: 3px;
+        }
+
+        .signup {
+            color: crimson;
+        }
+
+        form {
+            margin-left: 70px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="col-lg-4">
+
+        </div>
+
+        <div class="col-lg-4 div1">
+            <h2>Book The Show</h2>
+
+            <form>
+
+                <div class="form-group">
+                    <label>User Name</label>
+                    </br>
+                    <input type="text" placeholder="user" id="name" required autofocus>
+                </div>
+
+                <div class="form-group">
+                    <label>Email Id</label>
+                    </br>
+                    <input type="email" placeholder="user@bts.com" id="email" required autofocus>
+                </div>
+
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    </br>
+                    <input type="number" placeholder="7122334356" id="phone" required autofocus>
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    </br>
+                    <input type="password" id="password1" placeholder="password" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Retype Password</label>
+                    </br>
+                    <input type="password" id="password2" placeholder="password" required>
+                </div>
+
+                <div>
+                    <button class="btn" type="submit" onclick="register();return false;">Sign Up </button>
+                </div>
+
+
+
+            </form>
+            <p id="result" style="color: crimson;">
+            </p>
+
+        </div>
+        <div class="col-lg-4">
+
+        </div>
+    </div>
+
+    </div>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <script src="userdetails.js" type="text/JavaScript"></script>
+
+</body>
+
+</html>

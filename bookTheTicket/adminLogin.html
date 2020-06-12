@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title> Log In</title>
+
+    <style>
+        body {
+            background-color: crimson;
+         
+            
+        }
+
+        h2 {
+            color: crimson;
+            text-align: center;
+            margin-top: 25px;
+            font-family: Tahoma;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px black;
+        }
+
+        .div1 {
+            margin-top: 100px;
+            background-color: white;
+            height: 400px;
+            text-align: center;
+            box-shadow: 1px 1px 0px 0px white;
+            
+        }
+
+        table {
+            margin-left: 55Px;
+            margin-top: 50px;
+        }
+
+        [type="text"] {
+            width: 300px;
+            height: 40px;
+            margin-top: 20px;
+
+
+        }
+
+        [type="password"] {
+            margin-top: 20px;
+            width: 300px;
+            height: 40px;
+
+
+
+        }
+
+        [type="Submit"] {
+            margin-top: 20px;
+            width: 300px;
+            height: 40px;
+            color: white;
+            background-color: crimson;
+            border-color: grey;
+            font-weight: bold;
+
+
+        }
+
+        Button {
+            margin-top: 3px;
+        }
+
+        .signup {
+            color: crimson;
+        }
+
+        .btn2 {
+            background-color: crimson;
+            margin-top: 20px;
+            width: 300px;
+            height: 40px;
+            color: white;
+            font-weight: bold;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="col-lg-4">
+
+        </div>
+        <div class="col-lg-4 div1">
+            <h2>Book The Show</h2>
+
+            <form action="login">
+
+                <div class="form-group">
+                    <td><input id="email" type="text" placeholder="user@bts.com" required autofocus></td>
+
+                    <div class="form-group"></div>
+                    <td><input id="password" type="password" placeholder="password" required autofocus></td>
+                </div>
+                <div>
+                    <button class="btn btn2" onclick="validate();return false;">Log In </button>
+                </div>
+            </form>
+           
+
+            <p id="result" style="color: crimson;"></p>
+        </div>
+        <div class="col-lg-4">
+
+        </div>
+    </div>
+
+    </div>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+
+function validate(){
+    
+
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    fetch('http://localhost:8085/user/user-ms/v1/user/validate' ,{
+    method: 'POST',
+    headers: {
+        'Accept': 'application/json, text/plain, */* ',
+        'content-type': 'application/json'
+    },
+    body: JSON.stringify({emailId:email,password:password,role:"admin"})
+    })
+    .then((res) => res.json())
+    .then(data => {
+        console.log(data);
+        var status = data.status;
+
+        if(status==200){
+
+            localStorage.setItem("principle",email);
+            window.location.href = "Reports.html";
+        }else{
+            document.getElementById("result").innerHTML= `${data.errorDescription}`;
+        }
+
+       
+    })
+
+}
+    </script>
+</body>
+
+</html>

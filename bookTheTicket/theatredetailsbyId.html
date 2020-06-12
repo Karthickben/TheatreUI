@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    
+
+    <title> Book The Show</title>
+   <style>
+
+    
+    .card:hover {
+     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+      body{
+        background-color: crimson;
+          
+      }
+      h5{
+        font-weight: bold;
+        color:white;
+        margin: 10px;
+      }
+
+       h1{
+           text-align: center;
+           color: white;
+           margin: 5px;
+           font-weight: bold;
+           animation-fill-mode: forwards;
+           text-shadow:2px 2px 1px black;
+       }
+
+       .div1{
+           height: 70px;
+           background-color: crimson; 
+           border-bottom: solid 1px black;
+           box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+           
+
+       }
+       .loginBtn{
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+       }
+      
+       .div2{
+           height: 600px;
+          
+       }
+       .div3{
+           
+            border-bottom: none;
+            border-right: solid 2px black;
+            box-shadow: 1px 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.5s;
+            
+            
+            
+       }
+       .div11{
+
+        border-bottom: none;
+            border-right: solid 1px black;
+            box-shadow: 1px 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.5s;
+
+
+       }
+       .btn-group-vertical{
+           width: 216px;
+           height: 60px;
+           font-weight: bold;
+           transition: 0.3s;
+           margin-top: 15px;
+           
+       }
+       .div4{
+           
+           height: 150px;
+           border-bottom: none;
+         
+       }
+       .div5{
+           
+           height: 200px;
+           width: 1100px;
+           border-bottom: none;
+         
+           
+
+          
+       }
+       
+       .div7{
+       
+           height: 30px;
+           width: 1100px;
+           border-bottom: none;
+           
+           
+           
+       }
+       .card{
+
+            margin-top: 20px;
+           height: 140px;
+           min-width: 300px;
+           box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+           border: solid 1px gray;
+       }
+       .div6{
+         
+        
+           height: 200px;
+           width: 1100px;
+           border-bottom: none;
+         
+           
+           
+           
+         
+       }
+       .div12{
+          max-height: 520px;
+          overflow-y: scroll;
+
+       }
+       ::-webkit-scrollbar {
+         display: none;
+        }
+        .btn1{
+            
+            width: 100px;
+            height: 37px;
+            font-weight: bold;
+            font-size: 20px;
+            border: solid 1px black;
+            box-shadow: 1px 1px 1px black;
+        }
+        .btngroup2{
+           margin-top: 20px;
+           margin-left: 10px;
+        }
+        
+
+   </style>
+   
+  </head>
+  <body onload="getTheatreByIdForTheatreDetails()">
+
+    <div class="row div1">
+        <div class="col-lg-4">
+           
+            
+        </div>
+        <div class="col-lg-4">
+            <h1> Book The Show </h1>
+
+        </div>
+        <div class="col-lg-1">
+          
+        </div>
+        <div class="col-lg-3">
+            <!-- <button  class="loginBtn" style="border: none;outline: none;border: none;
+            margin-top: 20px;font-weight: bold;" onclick="goToSignIn()">Log In</button>
+            <button  class="loginBtn" style="border: none;outline: none;border: none;margin-top: 20px;
+            font-weight: bold" onclick="goToSignUp()">Sign Up</button> -->
+
+        <div class="btn-group-horizontal btngroup2">
+         <button type="button" class="btn  btn-secondary" onclick="logout()">Log Out</button>
+      
+
+        </div>
+            
+        </div>
+        
+
+    </div>
+    <div class="row div2">
+        <div class="col-lg-2 div3">
+            <br>
+
+            <div class="btn-group-vertical">
+                <button type="button" class="btn btn-secondary" onclick="homepage();return false"">Home Page</button>
+                <button type="button" class="btn btn-secondary" onclick="myBookings();return false">My Bookings</button>
+
+              </div>
+
+          
+
+        </div>
+        <div class="col-lg-4 div11 ">
+
+            <div calss="row" style="border-bottom: solid 1px black;height:100px;" id="theatreDetails1" >
+       
+                
+            </div>
+            <div calss="row" style="border-bottom: solid 1px black;max-height:450px;height:450px;
+            overflow-y: scroll;" id="screenDetails">
+                
+             </div>
+            
+
+        </div>
+        <div class="col-lg-6  div12" >
+            <div calss="row" style="border-bottom: solid 1px black;height:110px;" id="theatreDetails1" >
+                <h3 style="color: white;">Show Details</h3>
+                <div class="btn-group-horizontal btngroup2">
+                    <div id="availableShows">
+
+                    </div>
+                 
+           
+                   </div>
+               
+            <div class="row" >
+                <div id="ShowTimeDetails1">
+
+                </div>
+                
+
+            </div>
+       
+                
+            </div>
+            
+           
+              
+        </div>
+        
+
+    </div>
+    
+ 
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="homepage.js" type="text/JavaScript"></script>
+    <script src="moviedetails.js" type="text/JavaScript"></script>
+    <script src="theatreDetails.js" type="text/JavaScript"></script>
+</body>
+</html>
